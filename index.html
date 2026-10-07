@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#c8f0ff">
+    <title>HappyJump</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <main id="game-shell">
+      <canvas id="game-canvas" aria-label="HappyJump 3D 游戏画面"></canvas>
+      <button id="portal-return" class="portal-return is-hidden" type="button">← 返回首页</button>
+
+      <section id="hud" class="hud is-hidden" aria-live="polite">
+        <div class="hud-card score-card">
+          <span class="hud-label">SCORE</span>
+          <strong id="score-value">0</strong>
+        </div>
+        <div class="hud-card level-card">
+          <div class="level-line">
+            <span id="level-value">LV.1</span>
+            <span id="level-progress-text">0/20</span>
+          </div>
+          <div class="level-progress" aria-hidden="true">
+            <span id="level-progress-fill"></span>
+          </div>
+        </div>
+      </section>
+
+      <div id="charge-wrap" class="charge-wrap is-hidden" aria-hidden="true">
+        <span id="charge-fill"></span>
+      </div>
+
+      <div id="aim-hint" class="aim-hint is-hidden">← 方向键校准 →</div>
+      <div id="feedback-layer" class="feedback-layer" aria-live="polite"></div>
+
+      <section id="start-screen" class="overlay start-screen">
+        <div class="panel start-panel">
+          <p class="eyebrow">一步一步，跳向远方</p>
+          <h1>Happy<span>Jump</span></h1>
+          <div class="how-to-play">
+            <p><kbd>SPACE</kbd><span>按住蓄力，松开起跳</span></p>
+            <p><kbd>← →</kbd><span>方向键调整朝向（Lv.5 解锁）</span></p>
+            <p><i class="target-icon" aria-hidden="true"></i><span>落在中心，获得 Perfect 连击</span></p>
+          </div>
+          <button id="start-button" class="primary-button" type="button">
+            开始游戏 <small>START</small>
+          </button>
+          <span class="signature">xjzerg</span>
+        </div>
+      </section>
+
+      <section id="game-over-screen" class="overlay is-hidden">
+        <div class="panel game-over-panel">
+          <h2>GAME OVER</h2>
+          <p id="final-result" class="final-result">Score: 0 · Lv.1</p>
+          <p class="best-result">BEST <strong id="best-score">0</strong></p>
+
+          <form id="ranking-form" class="ranking-form">
+            <div class="name-row">
+              <input id="player-name" type="text" maxlength="12" placeholder="你的名字" autocomplete="nickname" aria-label="玩家姓名">
+              <button type="submit">提交</button>
+            </div>
+          </form>
+          <p id="portal-status" class="portal-status is-hidden" role="status"></p>
+          <button id="portal-retry" class="portal-retry is-hidden" type="button">重试同步成绩</button>
+
+          <div class="leaderboard">
+            <h3 id="leaderboard-title">本机记录</h3>
+            <div class="leaderboard-head"><span>名次</span><span>玩家</span><span>成绩</span><span>日期</span></div>
+            <ol id="leaderboard-list">
+              <li class="empty-ranking">还没有上榜记录</li>
+            </ol>
+          </div>
+
+          <button id="restart-button" class="primary-button" type="button">
+            再玩一次 <small>RESTART</small>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
