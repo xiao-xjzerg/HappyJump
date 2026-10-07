@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "project": "HappyJump",
+  "repository": "https://github.com/xiao-xjzerg/HappyJump.git",
+  "nodeVersion": "26.10.0",
+  "files": [
+    ".gitattributes",
+    ".githooks/pre-commit",
+    ".githooks/pre-push",
+    ".gitignore",
+    ".node-version",
+    ".publish-policy.json",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+    "index.html",
+    "scripts/check-public.mjs"
+  ],
+  "directories": [
+    "css",
+    "js",
+    "third_party"
+  ]
+}
